@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kadthala Homee</title>
+  <meta name="description" content="Dark mode portfolio (Tailwind CSS)" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Tailwind config (dark only visuals option via classes)
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            accent: { 500: '#06b6d4', 700: '#0891b2' }
+          },
+          keyframes: {
+            floaty: { '0%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-8px)' }, '100%': { transform: 'translateY(0)' } }
+          },
+          animation: { floaty: 'floaty 6s ease-in-out infinite' }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root{--bg:#0b1220;--card:#0f1724;--muted:#94a3b8;}
+    body{background:linear-gradient(180deg,#071022 0%, #071821 100%); font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
+    .glass-dark {
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.04);
+      backdrop-filter: blur(8px);
+    }
+    .hero-gradient {
+      background: linear-gradient(120deg, rgba(6,182,212,0.14) 0%, rgba(99,102,241,0.12) 40%, rgba(124,58,237,0.12) 70%);
+      background-size: 300% 300%;
+      animation: bgShift 10s ease infinite;
+    }
+    @keyframes bgShift {
+      0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}
+    }
+    .typing > b{border-right:2px solid rgba(255,255,255,0.24); padding-right:6px; margin-left:6px;}
+    .proj-overlay{background:linear-gradient(180deg, rgba(2,6,23,0.0) 0%, rgba(2,6,23,0.6) 70%); transition:opacity .25s ease; opacity:0}
+    .card:hover .proj-overlay{opacity:1}
+  </style>
+</head>
+<body class="dark text-slate-100">
+
+  <div class="min-h-screen flex flex-col">
+
+    <!-- NAV -->
+    <header class="sticky top-0 z-40">
+      <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="#home" class="flex items-center gap-3">
+          <span class="w-10 h-10 rounded-full bg-gradient-to-tr from-cyan-500 to-violet-600 flex items-center justify-center font-semibold">KH</span>
+          <span class="text-xl font-semibold">Kadthala Homee</span>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-6 text-slate-300">
+          <!--<a href="#projects" class="hover:text-white">Projects</a>-->
+          <a href="#about" class="hover:text-white">About</a>
+          <a href="#skills" class="hover:text-white">Skills</a>
+          <a href="#contact" class="hover:text-white">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="flex-1">
+      <!-- HERO -->
+      <section id="home" class="hero-gradient py-20">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-8 items-center">
+          <div class="space-y-5">
+            <p class="text-sm uppercase tracking-wide text-slate-300">Hello, I'm</p>
+            <h1 class="text-4xl md:text-6xl font-extrabold">Kadthala Homee</h1>
+
+            <div class="text-lg text-slate-300 flex items-center gap-3">
+              <div class="typing">I build <b id="typed">modern web apps</b></div>
+            </div>
+
+            <p class="text-slate-400 max-w-xl">Electronics & Communication Engineering student with a passion for hardware-software integration, embedded systems, and web development. I build practical solutions that bridge circuits and code.</p>
+
+            <div class="flex gap-3 mt-4">
+              <a href="resume.pdf" class="px-4 py-2 rounded-md bg-cyan-500 text-slate-900 font-semibold">Resume</a>
+              <a href="mailto:kadthalahomee@gmail.com" class="px-4 py-2 rounded-md border border-slate-700">Contact</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="rounded-2xl glass-dark p-6 shadow-xl">
+              <!-- use uploaded image path below -->
+              <img src="myphoto.jpg" alt="profile" class="w-36 h-36 rounded-full mx-auto object-cover shadow-lg" />
+              <h3 class="mt-4 text-center text-lg font-semibold">Kadthala Homee</h3>
+              <p class="text-center text-sm text-slate-400">ECE Student</p>
+
+              <!--<div class="mt-4 grid grid-cols-3 gap-3 text-center text-xs text-slate-300">
+                <div><div class="font-semibold">3+</div><div>Years (projects)</div></div>
+                <div><div class="font-semibold">5+</div><div>Projects</div></div>
+                <div><div class="font-semibold">2</div><div>Internships</div></div>
+              </div>
+            </div>-->
+
+            <div class="relative mt-6">
+              <div class="absolute -left-6 -bottom-6 w-24 h-24 rounded-full bg-gradient-to-tr from-cyan-600 to-violet-600 opacity-30 blur-xl animate-floaty"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+       <!--
+      <section id="projects" class="max-w-6xl mx-auto px-6 py-12">
+        <h2 class="text-2xl font-semibold mb-2">Selected Projects</h2>
+        <p class="text-slate-400 mb-6">Projects combining electronics, embedded systems and full-stack demos.</p>
+
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"-->
+          <!-- sample card -->
+           <!--
+          <article class="card rounded-2xl overflow-hidden bg-[#0f1724] border border-slate-800 shadow">
+            <div class="relative h-48">
+              <img src="https://images.unsplash.com/photo-1526378721451-5d3b2b9f7b1d?auto=format&fit=crop&w=1200&q=60" alt="" class="w-full h-full object-cover">
+              <div class="proj-overlay absolute inset-0 flex items-end p-4">
+                <div>
+                  <h3 class="text-lg font-semibold text-white">Embedded Sensor Hub</h3>
+                  <p class="text-sm text-slate-300">IoT data logger with ESP32 and Web dashboard.</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-4 border-t border-slate-800">
+              <div class="flex items-center justify-between text-slate-400 text-xs">
+                <div>ESP32 · MQTT</div>
+                <div class="flex gap-3">
+                  <a href="#" class="text-cyan-400">Live</a>
+                  <a href="#" class="text-cyan-400">Code</a>
+                </div>
+              </div>
+            </div>
+          </article>
+        -->
+          <!-- repeat more cards as needed -->
+        <!--</div>
+      </section>
+    -->
+      <!-- ABOUT -->
+      <section id="about" class="max-w-6xl mx-auto px-6 py-12">
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h2 class="text-2xl font-semibold mb-3">About Me</h2>
+            <p class="text-slate-300">I'm an ECE student with a solid foundation in circuits, communication systems, and embedded programming. I enjoy building systems that combine hardware and software — from microcontroller prototypes to web dashboards for data visualization.</p>
+
+            <ul class="mt-4 list-disc pl-5 text-slate-400 space-y-1">
+              <li>Embedded systems: ESP32, Arduino</li>
+              <li>Programming: C, Python, JavaScript</li>
+              <!--<li>Web: HTML, CSS, Tailwind, simple dashboards</li>-->
+            </ul>
+          </div>
+
+          <div class="space-y-4">
+            <div class="rounded-xl glass-dark p-4">
+              <h3 class="font-semibold">Education</h3>
+              <p class="text-slate-400 text-sm mt-2">BTech in Electronics & Communication Engineering — SR University (2024-2028)</p>
+            </div>
+
+            <div class="rounded-xl glass-dark p-4">
+              <h3 class="font-semibold">Contact</h3>
+              <p class="text-slate-400 text-sm mt-2">Email: <a class="text-cyan-400" href="mailto:kadthalahomee@example.com">kadthalahomee@example.com</a></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" class="max-w-6xl mx-auto px-6 py-12">
+        <h2 class="text-2xl font-semibold mb-4">Skills</h2>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1 rounded-full border border-slate-700 text-slate-300">C
+
+          </span>
+          <span class="px-3 py-1 rounded-full border border-slate-700 text-slate-300">Python</span>
+          <span class="px-3 py-1 rounded-full border border-slate-700 text-slate-300">Embedded Systems</span>
+          <span class="px-3 py-1 rounded-full border border-slate-700 text-slate-300">ESP32</span>
+          <!--<span class="px-3 py-1 rounded-full border border-slate-700 text-slate-300">HTML / CSS</span>-->
+          <!--<span class="px-3 py-1 rounded-full border border-slate-700 text-slate-300">Tailwind</span>-->
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="max-w-6xl mx-auto px-6 py-12">
+        <h2 class="text-2xl font-semibold mb-2">Contact</h2>
+        <p class="text-slate-400 mb-6">Interested in collaborating? Reach out via email.</p>
+
+        <form id="contactForm" class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl">
+          <input name="name" placeholder="Your name" class="px-4 py-3 rounded-md bg-[#0b1220] border border-slate-800 text-slate-200" required>
+          <input name="email" type="email" placeholder="Your email" class="px-4 py-3 rounded-md bg-[#0b1220] border border-slate-800 text-slate-200" required>
+          <input name="subject" placeholder="Subject" class="px-4 py-3 rounded-md bg-[#0b1220] border border-slate-800 text-slate-200 sm:col-span-2">
+          <textarea name="message" rows="6" placeholder="Message" class="px-4 py-3 rounded-md bg-[#0b1220] border border-slate-800 text-slate-200 sm:col-span-2" required></textarea>
+
+          <div class="sm:col-span-2 flex items-center gap-4">
+            <button type="submit" class="px-4 py-2 rounded-md bg-cyan-500 text-slate-900 font-semibold">Send message</button>
+            <p id="formStatus" class="text-sm text-slate-400"></p>
+          </div>
+        </form>
+      </section>
+
+    </main>
+
+    <footer class="border-t border-slate-800">
+      <div class="max-w-6xl mx-auto px-6 py-6 text-sm text-slate-400 flex items-center justify-between">
+        <div>&copy; <span id="year"></span>Kadthala Homee</div>
+        <div class="flex items-center gap-4">
+          <a href="#" class="hover:underline">Privacy</a>
+          <a href="#" class="hover:underline">Terms</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // typing animation (dark-only)
+    const phrases = ['embedded systems', 'hardware-software bridges', 'IoT dashboards'];
+    let ti = 0, ci = 0, typing = true;
+    const typedEl = document.getElementById('typed');
+    (function typeLoop(){
+      const word = phrases[ti];
+      if (typing) {
+        typedEl.textContent = word.slice(0, ci + 1);
+        ci++;
+        if (ci === word.length) { typing = false; setTimeout(typeLoop, 900); } else setTimeout(typeLoop, 80);
+      } else {
+        typedEl.textContent = word.slice(0, ci - 1);
+        ci--;
+        if (ci === 0) { typing = true; ti = (ti + 1) % phrases.length; setTimeout(typeLoop, 250); } else setTimeout(typeLoop, 40);
+      }
+    })();
+
+    // intersection observer for reveal
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('opacity-100','translate-y-0'); e.target.classList.remove('opacity-0','-translate-y-4'); io.unobserve(e.target); }
+      });
+    }, {threshold: 0.2});
+    document.querySelectorAll('section, .card').forEach(el => { el.classList.add('opacity-0','-translate-y-4','transition-all','duration-700'); io.observe(el); });
+
+    // mailto fallback
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const fd = new FormData(this);
+      const name = fd.get('name'), email = fd.get('email'), subject = fd.get('subject') || 'Contact', message = fd.get('message');
+      window.location.href = `mailto:your.email@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent('Name: '+name+'\\nEmail: '+email+'\\n\\n'+message)}`;
+      document.getElementById('formStatus').textContent = 'Opening email client...';
+      setTimeout(()=> document.getElementById('formStatus').textContent = '', 3500);
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
