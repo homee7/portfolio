@@ -166,7 +166,7 @@
 
             <div class="rounded-xl glass-dark p-4">
               <h3 class="font-semibold">Contact</h3>
-              <p class="text-slate-400 text-sm mt-2">Email: <a class="text-cyan-400" href="mailto:kadthalahomee@gmail.com">kadthalahomee@gmail.com</a></p>
+              <p class="text-slate-400 text-sm mt-2">Email: <a class="text-cyan-400" href="mailto:kadthalahomee@example.com">kadthalahomee@example.com</a></p>
             </div>
           </div>
         </div>
@@ -182,10 +182,43 @@
           <span class="px-3 py-1 rounded-full border border-slate-700 text-slate-300">Python</span>
           <span class="px-3 py-1 rounded-full border border-slate-700 text-slate-300">Embedded Systems</span>
           <span class="px-3 py-1 rounded-full border border-slate-700 text-slate-300">ESP32</span>
-          <!--<span class="px-3 py-1 rounded-full border border-slate-700 text-slate-300">HTML / CSS</span>-->
-          <!--<span class="px-3 py-1 rounded-full border border-slate-700 text-slate-300">Tailwind</span>-->
+          <span class="px-3 py-1 rounded-full border border-slate-700 text-slate-300">vivado</span>
+          <span class="px-3 py-1 rounded-full border border-slate-700 text-slate-300">Tinkercad</span>
         </div>
       </section>
+      
+<!-- CERTIFICATES -->
+<section id="certificates" class="max-w-6xl mx-auto px-6 py-12">
+  <h2 class="text-2xl font-semibold mb-6">Certificates</h2>
+
+  <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+    <div class="glass-dark p-5 rounded-xl">
+      <h3 class="font-semibold">Certification of Appreciation</h3>
+      <p class="text-slate-300 text-sm mt-2">
+        2-Day Hands-on Workshop on
+        <span class="text-cyan-400">Raspberry Pi for Real-Time ML Applications</span>
+      </p>
+    </div>
+
+    <div class="glass-dark p-5 rounded-xl">
+      <h3 class="font-semibold">Certification of Participation</h3>
+      <p class="text-slate-300 text-sm mt-2">
+        YNTRA – Project Expo 2025
+      </p>
+    </div>
+
+    <div class="glass-dark p-5 rounded-xl">
+      <h3 class="font-semibold">Certification of Appreciation</h3>
+      <p class="text-slate-300 text-sm mt-2">
+        Outstanding Academic Achievement &
+        <span class="text-cyan-400">Gamification Excellence Award</span>
+      </p>
+      <p class="text-slate-500 text-xs mt-1">2024 – 2025</p>
+    </div>
+
+  </div>
+</section>
 
       <!-- CONTACT -->
       <section id="contact" class="max-w-6xl mx-auto px-6 py-12">
@@ -249,7 +282,7 @@
       e.preventDefault();
       const fd = new FormData(this);
       const name = fd.get('name'), email = fd.get('email'), subject = fd.get('subject') || 'Contact', message = fd.get('message');
-      window.location.href = `mailto:kadthalahomee.email@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent('Name: '+name+'\\nEmail: '+email+'\\n\\n'+message)}`;
+      window.location.href = `mailto:your.email@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent('Name: '+name+'\\nEmail: '+email+'\\n\\n'+message)}`;
       document.getElementById('formStatus').textContent = 'Opening email client...';
       setTimeout(()=> document.getElementById('formStatus').textContent = '', 3500);
     });
@@ -258,4 +291,3 @@
   </script>
 </body>
 </html>
-
